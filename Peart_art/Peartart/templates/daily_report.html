@@ -1,0 +1,32 @@
+﻿{% extends "Peartart/layout.html" %}
+
+{% block content %}
+
+<h1>test</h1>
+<table class="table table-sm">
+    <thead class="bg-primary text-light">
+        <tr>
+        <th class="py-2">日付</th>
+        <th class="py-2">出</th>
+        <th class="small py-2">退</th>
+        <th class="small py-2">とど</th>
+        <th class="small py-2">やったこと</th>
+        <th class="small py-2">学んだこと</th>
+        <th class="small py-2">ふりー</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for report in reports %}
+        <tr>
+            <td>{{report.report_date}}</td>
+            <td>{{report.in_time}}</td>
+            <td>{{report.out_time}}</td>
+            <td>{{report.do_list}}</td>
+            <td>{{report.did_list}}</td>
+            <td>{{report.learnings}}</td>
+            <td>{{report.free_writing}}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}
